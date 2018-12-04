@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="StudentPortal.Module.BusinessObjects.Graduate" Caption="Випускник">
+      <OwnMembers>
+        <Member Name="FamilyName" Caption="Прізвище" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="Ім'я" />
+        <Member Name="Speciality" Caption="Спеціальність" />
+        <Member Name="SurName" Caption="По батькові" />
+        <Member Name="WorkPlace" Caption="Місце роботи" />
+        <Member Name="YearOfGraduation" Caption="Рік випуску" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Group" Caption="Група">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Course" Caption="Курс" />
+        <Member Name="Department" Caption="Кафедра" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Lessons" Caption="Пари" />
+        <Member Name="Name" Caption="Назва" />
+        <Member Name="NumOfStud" Caption="К-сть студентів" />
+        <Member Name="Speciality" Caption="Спеціальність" />
+        <Member Name="Students" Caption="Студенти" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Lesson" Caption="Пара">
+      <OwnMembers>
+        <Member Name="Date" Caption="Дата" />
+        <Member Name="Description" Caption="Опис" />
+        <Member Name="Discipline" Caption="Дисципліна" />
+        <Member Name="Group" Caption="Група" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Marks" Caption="Відвідуваність" />
+        <Member Name="Name" Caption="Назва" />
+        <Member Name="Teacher" Caption="Викладач" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Mark" Caption="Оцінка">
+      <OwnMembers>
+        <Member Name="Comment" Caption="Коментар" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="IsPresent" Caption="Присутній" />
+        <Member Name="Lesson" Caption="Пара" />
+        <Member Name="MarkValue" Caption="Оцінка" />
+        <Member Name="Student" Caption="Студент" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.PostGraduate" Caption="Аспірант">
+      <OwnMembers>
+        <Member Name="FamilyName" Caption="Прізвище" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="І'мя" />
+        <Member Name="NameOfEducationInstitution" Caption="Закінчений ВНЗ" />
+        <Member Name="Note" Caption="Примітка" />
+        <Member Name="Photo" Caption="Фото" />
+        <Member Name="SurName" Caption="По батькові" />
+        <Member Name="YearOfDefenseDissertation" Caption="Рік захисту дисертації" />
+        <Member Name="YearOfGraduation" Caption="Рік закінчення аспірантури" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.ResearchStaff" Caption="Науковeць">
+      <OwnMembers>
+        <Member Name="FamilyName" Caption="Прізвище" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="Ім'я" />
+        <Member Name="Photo" Caption="Фото" />
+        <Member Name="Position" Caption="Посада" />
+        <Member Name="SurName" Caption="По батькові" />
+        <Member Name="YearOfEndWork" Caption="Рік закінчення роботи" />
+        <Member Name="YearOfStartWork" Caption="Рік початку роботи" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Speciality" Caption="Спеціальність">
+      <OwnMembers>
+        <Member Name="BranchOfKnowledge" Caption="Галузь знань" />
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Description" Caption="Опис" />
+        <Member Name="Groups" Caption="Групи" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="Назва" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Student" Caption="Студент">
+      <OwnMembers>
+        <Member Name="Address" Caption="Адреса" />
+        <Member Name="BirthDay" Caption="Дата народження" />
+        <Member Name="Code" Caption="Код" />
+        <Member Name="FamilyName" Caption="Прізвище" />
+        <Member Name="Group" Caption="Група" />
+        <Member Name="HomeTelNumber" Caption="Домашній телефон" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="IsFullTimeEducation" Caption="Денне/заочне навчання" />
+        <Member Name="IsMan" Caption="Чоловік/Жінка" />
+        <Member Name="IsPaidEducation" Caption="Платне/бюджетне навчання" />
+        <Member Name="Marks" Caption="Оцінки" />
+        <Member Name="Name" Caption="Ім'я" />
+        <Member Name="SurName" Caption="По батькові" />
+        <Member Name="TelNumber" Caption="Телефон" />
+        <Member Name="YearOfEnd" Caption="Рік початку навчання" />
+        <Member Name="YearOfStart" Caption="Рік закінчення навчання" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.SupportStaff" Caption="Допоміжний персонал">
+      <OwnMembers>
+        <Member Name="FamilyName" Caption="Прізвище" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="Ім'я" />
+        <Member Name="Photo" Caption="Фото" />
+        <Member Name="Position" Caption="Посада" />
+        <Member Name="SurName" Caption="По батькові" />
+        <Member Name="YearOfEndWork" Caption="Рік закінчення роботи" />
+        <Member Name="YearOfStartWork" Caption="Рік початку роботи" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.TeachingStaff" Caption="Викладачі">
+      <OwnMembers>
+        <Member Name="AcademicDegree" Caption="Академічний ступінь" />
+        <Member Name="AcademicStatus" Caption="Академічний статус" />
+        <Member Name="DateOfBirthday" Caption="Дата народження" />
+        <Member Name="Department" Caption="Кафедра" />
+        <Member Name="Disciplines" Caption="Дисципліни" />
+        <Member Name="FamilyName" Caption="Прізвище" />
+        <Member Name="FinishedUniversity" Caption="Закінчений ВНЗ" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="IsActive" Caption="Активний" />
+        <Member Name="Name" Caption="Ім`я" />
+        <Member Name="Photo" Caption="Фото" />
+        <Member Name="ScientificInterests" Caption="Наукові інтереси" />
+        <Member Name="SubjectOfDissertation" Caption="Тема дисертації" />
+        <Member Name="SurName" Caption="По батькові" />
+        <Member Name="WorkingPhone" Caption="Робочий телефон" />
+        <Member Name="YearOfDefenseDissertation" Caption="Рік захисту дисертації" />
+        <Member Name="YearOfEndWork" Caption="Рік закінчення роботи" />
+        <Member Name="YearOfStartWork" Caption="Рік початку роботи" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Term" Caption="Сесія">
+      <OwnMembers>
+        <Member Name="Date" Caption="Дата" />
+        <Member Name="Description" Caption="Опис" />
+        <Member Name="Discipline" Caption="Дисципліна" />
+        <Member Name="Group" Caption="Група" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="IsExam" Caption="Екзамен/Залік" />
+        <Member Name="Name" Caption="Назва" />
+        <Member Name="Teacher" Caption="Викладач" />
+        <Member Name="TermMarks" Caption="Відвідуваність" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.TermMark" Caption="Оцінки">
+      <OwnMembers>
+        <Member Name="Comment" Caption="Коментар" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="IsPresent" Caption="Присутній" />
+        <Member Name="MarkValue" Caption="Оцінка" />
+        <Member Name="Student" Caption="Студент" />
+        <Member Name="Term" Caption="Сесія" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="eJournal" Caption="Журнал">
+        <Items>
+          <Item Id="Department_ListView" Caption="Кафедри" />
+          <Item Id="Discipline_ListView" Caption="Дисципліни" />
+          <Item Id="Faculty_ListView" Caption="Факультети" />
+          <Item Id="Group_ListView" Caption="Групи" />
+          <Item Id="Lesson_ListView" Caption="Пари" />
+          <Item Id="Mark_ListView" Caption="Оцінки" />
+          <Item Id="Speciality_ListView" Caption="Спеціальності" />
+        </Items>
+      </Item>
+      <Item Id="DepartmentInfo" Caption="Персонал">
+        <Items>
+          <Item Id="Graduate_ListView" Caption="Випускники" />
+          <Item Id="PostGraduate_ListView" Caption="Аспіранти" />
+          <Item Id="ResearchStaff_ListView" Caption="Науковці" />
+          <Item Id="Student_ListView" Caption="Студенти" />
+        </Items>
+      </Item>
+      <Item Id="Term" Caption="Сесія" />
+    </Items>
+  </NavigationItems>
+</Application>

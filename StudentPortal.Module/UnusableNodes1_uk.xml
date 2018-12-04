@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="StudentPortal.Module.BusinessObjects.Lesson">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Students" Caption="Студенти" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Student">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Lessons" Caption="Пари" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>

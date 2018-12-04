@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="StudentPortal">
+  <BOModel>
+    <Class Name="StudentPortal.Module.BusinessObjects.Department" Caption="Кафедра">
+      <OwnMembers>
+        <Member Name="Address" Caption="Адреса" />
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Description" Caption="Опис" />
+        <Member Name="Faculty" Caption="Факультет" />
+        <Member Name="Groups" Caption="Групи" />
+        <Member Name="Head" Caption="Завідувач" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="Назва" />
+        <Member Name="Photo" Caption="Фото" />
+        <Member Name="TeachingStaffs" Caption="Викладачі" />
+        <Member Name="TelNumber" Caption="Телефон" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Discipline" Caption="Дисципліна">
+      <OwnMembers>
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Description" Caption="Опис" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="IsExam" Caption="Екзамен/Залік" />
+        <Member Name="LectureHours" Caption="К-сть лекцій" />
+        <Member Name="Lessons" Caption="Пари" />
+        <Member Name="Name" Caption="Назва" />
+        <Member Name="PracticalHours" Caption="К-сть практичних" />
+        <Member Name="TeachingStaff" Caption="Викладач" LookupProperty="FullName" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Faculty" Caption="Факультет">
+      <OwnMembers>
+        <Member Name="Address" Caption="Адреса" />
+        <Member Name="Code" Caption="Код" />
+        <Member Name="Departments" Caption="Кафедри" />
+        <Member Name="Description" Caption="Опис" />
+        <Member Name="Id" Caption="№" />
+        <Member Name="Name" Caption="назва" />
+        <Member Name="Photo" Caption="Фото" />
+        <Member Name="SiteAddress" Caption="Веб-ресурс" />
+        <Member Name="TelNumber" Caption="Телефон" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Graduate" ObjectCaptionFormat="{0:FamilyName} {0:Name}" />
+    <Class Name="StudentPortal.Module.BusinessObjects.Lesson">
+      <OwnMembers>
+        <Member Name="Teacher" LookupProperty="FullName" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.Mark">
+      <OwnMembers>
+        <Member Name="Student" LookupProperty="FullName" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.PostGraduate" ObjectCaptionFormat="{0:FamilyName} {0:Name}" />
+    <Class Name="StudentPortal.Module.BusinessObjects.ResearchStaff" ObjectCaptionFormat="{0:FamilyName} {0:Name}" />
+    <Class Name="StudentPortal.Module.BusinessObjects.Student" ObjectCaptionFormat="{0:FamilyName} {0:Name}" />
+    <Class Name="StudentPortal.Module.BusinessObjects.SupportStaff" ObjectCaptionFormat="{0:FamilyName} {0:Name}" />
+    <Class Name="StudentPortal.Module.BusinessObjects.TeachingStaff" ObjectCaptionFormat="{0:FamilyName} {0:Name}" />
+    <Class Name="StudentPortal.Module.BusinessObjects.Term">
+      <OwnMembers>
+        <Member Name="Teacher" LookupProperty="FullName" />
+      </OwnMembers>
+    </Class>
+    <Class Name="StudentPortal.Module.BusinessObjects.TermMark">
+      <OwnMembers>
+        <Member Name="Student" LookupProperty="FullName" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="eJournal" Index="0" />
+      <Item Id="DepartmentInfo" Index="1" />
+      <Item Id="Term" Index="2" />
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Graduate_ListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="PostGraduate_ListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="ResearchStaff_ListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Student_ListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+        <ColumnInfo Id="SurName" Index="2" />
+        <ColumnInfo Id="Group" Index="3" />
+        <ColumnInfo Id="Code" Index="4" />
+      </Columns>
+    </ListView>
+    <ListView Id="Student_LookupListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" PropertyName="FamilyName" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Group" PropertyName="Group" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="SupportStaff_ListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="TeachingStaff_ListView">
+      <Columns>
+        <ColumnInfo Id="FamilyName" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="TeachingStaff_LookupListView" Criteria="[IsActive] = True">
+      <Columns>
+        <ColumnInfo Id="FamilyName" PropertyName="FamilyName" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" Index="1" />
+        <ColumnInfo Id="AcademicStatus" PropertyName="AcademicStatus" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Department.Name" PropertyName="Department.Name" Index="3" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

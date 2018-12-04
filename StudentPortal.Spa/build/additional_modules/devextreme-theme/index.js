@@ -1,0 +1,1 @@
+export { ThemeGenerator } from "./dist/theme-generator";

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="DepartmentInfo" Caption="Персонал">
+            <Items>
+              <Item Id="Graduate_ListView" Caption="Випускники" />
+              <Item Id="PostGraduate_ListView" Caption="Аспіранти" />
+              <Item Id="ResearchStaff_ListView" Caption="Науковці" />
+              <Item Id="Student_ListView" Caption="Студенти" />
+            </Items>
+          </Item>
+          <Item Id="Department_ListView" Caption="Кафедри" />
+          <Item Id="Discipline_ListView" Caption="Дисципліни" />
+          <Item Id="Faculty_ListView" Caption="Факультети" />
+          <Item Id="Group_ListView" Caption="Групи" />
+          <Item Id="Lesson_ListView" Caption="Пари" />
+          <Item Id="Mark_ListView" Caption="Оцінки" />
+          <Item Id="Speciality_ListView" Caption="Спеціальності" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

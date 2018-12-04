@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.XtraPrinting.ExportTarget" IsNewNode="True" />
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems StartupNavigationItem="Faculty_ListView">
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="DepartmentInfo" Index="1" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Graduate_ListView" ViewId="Graduate_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="PostGraduate_ListView" ViewId="PostGraduate_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="ResearchStaff_ListView" ViewId="ResearchStaff_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="Student_ListView" ViewId="Student_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="SupportStaff_ListView" ViewId="SupportStaff_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="TeachingStaff_ListView" ViewId="TeachingStaff_ListView" ObjectKey="" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Department_ListView" ViewId="Department_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Discipline_ListView" ViewId="Discipline_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Faculty_ListView" ViewId="Faculty_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Group_ListView" ViewId="Group_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Lesson_ListView" ViewId="Lesson_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Mark_ListView" ViewId="Mark_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Speciality_ListView" ViewId="Speciality_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Term_ListView" ViewId="Term_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="TermMark_ListView" ViewId="TermMark_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="DepartmentInfo" Removed="True" />
+      <Item Id="eJournal" Removed="True">
+        <Items>
+          <Item Id="Department_ListView" Removed="True" />
+          <Item Id="Discipline_ListView" Removed="True" />
+          <Item Id="Faculty_ListView" Removed="True" />
+          <Item Id="Group_ListView" Removed="True" />
+          <Item Id="Lesson_ListView" Removed="True" />
+          <Item Id="Mark_ListView" Removed="True" />
+          <Item Id="Speciality_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Term" Removed="True">
+        <Items>
+          <Item Id="Term_ListView" Removed="True" />
+          <Item Id="TermMark_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemMobileModule" Version="18.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="AboutInfo_DetailView" MobileVisible="True" />
+  </Views>
+</Application>

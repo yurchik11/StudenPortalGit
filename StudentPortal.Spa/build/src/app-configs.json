@@ -1,0 +1,482 @@
+{
+  "mobile": {
+    "id": "Spa Demo",
+    "title": "Spa Demo",
+    "confirmationSettings": {
+      "yesText": "Yes",
+      "noText": "No"
+    },
+    "theme": {
+      "appearance": "generic",
+      "primaryColor": "#3361b7"
+    },
+    "navigation": {
+      "defaultView": "SimpleObject_ListView",
+      "items": [
+        {
+          "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZD0iTTUuMiw2LjgiLz4NCjxwYXRoIGZpbGw9IiM0RDZEQUQiIGQ9Ik0yMywyMGMwLDEuNy0xLjMsMy0zLDNINGMtMS42LDAtMy0xLjMtMy0zVjRjMC0xLjYsMS40LTMsMy0zaDE2YzEuNywwLDMsMS40LDMsM1YyMHoiLz4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01LjEsMTIuNUM1LDEyLjQsNSwxMi4zLDUsMTIuMmMwLTAuMSwwLjEtMC4zLDAuMi0wLjRMNS45LDExYzAuMi0wLjIsMC41LTAuMiwwLjgsMGwwLjEsMC4xbDMsMy4yDQoJYzAuMSwwLjEsMC4zLDAuMSwwLjQsMGw3LjItNy41aDAuMWMwLjItMC4yLDAuNS0wLjIsMC44LDBsMC44LDAuOGMwLjIsMC4yLDAuMiwwLjUsMCwwLjhsLTguNiw5Yy0wLjEsMC4xLTAuMiwwLjItMC40LDAuMg0KCWMtMC4yLDAtMC4zLTAuMS0wLjQtMC4ybC00LjItNC41TDUuMSwxMi41eiIvPg0KPC9zdmc+DQo=",
+          "title": "SimpleObject",
+          "visible": true,
+          "id": "SimpleObject_ListView",
+          "viewId": "SimpleObject_ListView"
+        }
+      ]
+    },
+    "views": [
+      {
+        "id": "SimpleObject_ListView",
+        "type": "listView",
+        "title": "Task",
+        "components": [
+          {
+            "id": "viewToolbar",
+            "type": "xaf-toolbar",
+            "selectionIndependent": [
+              {
+                "parameterType": "button",
+                "text": "Refresh",
+                "location": "before",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "Refresh"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "xaf-list",
+            "id": "main-list",
+            "itemComponents": [
+              {
+                "type": "stackPanel",
+                "id": "verticalPanel",
+                "components": [
+                  {
+                    "type": "label",
+                    "text": "$item.Subject"
+                  },
+                  {
+                    "type": "label",
+                    "text": "$item.Description"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SimpleObject_DetailView$View",
+        "type": "detailView",
+        "title": "$local.currentObject.Subject",
+        "components": [
+          {
+            "type": "xaf-appbar",
+            "selectionIndependent": [
+              {
+                "type": "command",
+                "parameterType": "button",
+                "text": "Edit",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "SwitchToEditMode"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "id": "mainForm",
+            "items": [
+              {
+                "title": "Subject",
+                "type": "label",
+                "text": "$local.currentObject.Subject"
+              },
+              {
+                "title": "Description",
+                "type": "label",
+                "text": "$local.currentObject.Description"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SimpleObject_DetailView$Edit",
+        "type": "detailView",
+        "title": "$local.currentObject.Subject",
+        "components": [
+          {
+            "id": "viewToolbar",
+            "type": "xaf-appbar",
+            "selectionIndependent": [
+              {
+                "parameterType": "button",
+                "text": "Refresh",
+                "location": "before",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "Refresh"
+                  }
+                }
+              },
+              {
+                "type": "command",
+                "parameterType": "xaf-singleChoiceAction",
+                "items": [
+                  {
+                    "text": "Save",
+                    "onExecute": {
+                      "$action": {
+                        "actionId": "Save"
+                      }
+                    }
+                  },
+                  {
+                    "text": "Save&Close",
+                    "onExecute": {
+                      "$action": {
+                        "actionId": "SaveAndClose"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "id": "mainForm",
+            "items": [
+              {
+                "title": "Subject",
+                "type": "input",
+                "value": "$local.currentObject.Subject"
+              },
+              {
+                "title": "Description",
+                "type": "input",
+                "value": "$local.currentObject.Description"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "tablet": {
+    "id": "Spa Demo",
+    "title": "Spa Demo",
+    "confirmationSettings": {
+      "yesText": "Yes",
+      "noText": "No"
+    },
+    "theme": {
+      "appearance": "generic",
+      "primaryColor": "#3361b7"
+    },
+    "navigation": {
+      "defaultView": "SimpleObject_ListView",
+      "items": [
+        {
+          "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZD0iTTUuMiw2LjgiLz4NCjxwYXRoIGZpbGw9IiM0RDZEQUQiIGQ9Ik0yMywyMGMwLDEuNy0xLjMsMy0zLDNINGMtMS42LDAtMy0xLjMtMy0zVjRjMC0xLjYsMS40LTMsMy0zaDE2YzEuNywwLDMsMS40LDMsM1YyMHoiLz4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01LjEsMTIuNUM1LDEyLjQsNSwxMi4zLDUsMTIuMmMwLTAuMSwwLjEtMC4zLDAuMi0wLjRMNS45LDExYzAuMi0wLjIsMC41LTAuMiwwLjgsMGwwLjEsMC4xbDMsMy4yDQoJYzAuMSwwLjEsMC4zLDAuMSwwLjQsMGw3LjItNy41aDAuMWMwLjItMC4yLDAuNS0wLjIsMC44LDBsMC44LDAuOGMwLjIsMC4yLDAuMiwwLjUsMCwwLjhsLTguNiw5Yy0wLjEsMC4xLTAuMiwwLjItMC40LDAuMg0KCWMtMC4yLDAtMC4zLTAuMS0wLjQtMC4ybC00LjItNC41TDUuMSwxMi41eiIvPg0KPC9zdmc+DQo=",
+          "title": "SimpleObject",
+          "visible": true,
+          "id": "SimpleObject_ListView",
+          "viewId": "SimpleObject_ListView"
+        }
+      ]
+    },
+    "views": [      
+      {
+        "id": "SimpleObject_ListView",
+        "type": "listView",
+        "title": "Task",
+        "components": [
+          {
+            "id": "viewToolbar",
+            "type": "toolbar",
+            "items": [
+              {
+                "parameterType": "button",
+                "text": "Refresh",
+                "location": "before",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "Refresh"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "xaf-grid",
+            "id": "main-list",
+            "columns": [
+              "Subject",
+              "Description"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SimpleObject_DetailView$View",
+        "type": "detailView",
+        "title": "$local.currentObject.Subject",
+        "components": [
+          {
+            "type": "toolbar",
+            "items": [
+              {
+                "type": "command",
+                "parameterType": "button",
+                "text": "Edit",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "SwitchToEditMode"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "id": "mainForm",
+            "items": [
+              {
+                "title": "Subject",
+                "type": "label",
+                "text": "$local.currentObject.Subject"
+              },
+              {
+                "title": "Description",
+                "type": "label",
+                "text": "$local.currentObject.Description"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SimpleObject_DetailView$Edit",
+        "type": "detailView",
+        "title": "$local.currentObject.Subject",
+        "components": [
+          {
+            "id": "viewToolbar",
+            "type": "appbar",
+            "selectionIndependent": [
+              {
+                "parameterType": "button",
+                "text": "Refresh",
+                "location": "before",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "Refresh"
+                  }
+                }
+              },
+              {
+                "type": "command",
+                "parameterType": "xaf-singleChoiceAction",
+                "items": [
+                  {
+                    "text": "Save",
+                    "onExecute": {
+                      "$action": {
+                        "actionId": "Save"
+                      }
+                    }
+                  },
+                  {
+                    "text": "Save&Close",
+                    "onExecute": {
+                      "$action": {
+                        "actionId": "SaveAndClose"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "id": "mainForm",
+            "items": [
+              {
+                "title": "Subject",
+                "type": "input",
+                "value": "$local.currentObject.Subject"
+              },
+              {
+                "title": "Description",
+                "type": "input",
+                "value": "$local.currentObject.Description"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "desktop": {
+    "id": "Spa Demo",
+    "title": "Spa Demo",
+    "confirmationSettings": {
+      "yesText": "Yes",
+      "noText": "No"
+    },
+    "theme": {
+      "appearance": "generic",
+      "primaryColor": "#3361b7"
+    },
+    "navigation": {
+      "defaultView": "SimpleObject_ListView",
+      "items": [
+        {
+          "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZD0iTTUuMiw2LjgiLz4NCjxwYXRoIGZpbGw9IiM0RDZEQUQiIGQ9Ik0yMywyMGMwLDEuNy0xLjMsMy0zLDNINGMtMS42LDAtMy0xLjMtMy0zVjRjMC0xLjYsMS40LTMsMy0zaDE2YzEuNywwLDMsMS40LDMsM1YyMHoiLz4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01LjEsMTIuNUM1LDEyLjQsNSwxMi4zLDUsMTIuMmMwLTAuMSwwLjEtMC4zLDAuMi0wLjRMNS45LDExYzAuMi0wLjIsMC41LTAuMiwwLjgsMGwwLjEsMC4xbDMsMy4yDQoJYzAuMSwwLjEsMC4zLDAuMSwwLjQsMGw3LjItNy41aDAuMWMwLjItMC4yLDAuNS0wLjIsMC44LDBsMC44LDAuOGMwLjIsMC4yLDAuMiwwLjUsMCwwLjhsLTguNiw5Yy0wLjEsMC4xLTAuMiwwLjItMC40LDAuMg0KCWMtMC4yLDAtMC4zLTAuMS0wLjQtMC4ybC00LjItNC41TDUuMSwxMi41eiIvPg0KPC9zdmc+DQo=",
+          "title": "Tasks",
+          "visible": true,
+          "id": "SimpleObject_ListView",
+          "viewId": "SimpleObject_ListView"
+        }
+      ]
+    },
+    "views": [      
+      {
+        "id": "SimpleObject_ListView",
+        "type": "listView",
+        "title": "SimpleObject",
+        "components": [
+          {
+            "id": "viewToolbar",
+            "type": "xaf-toolbar",
+            "selectionIndependent": [
+              {
+                "parameterType": "button",
+                "text": "Refresh",
+                "location": "before",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "Refresh"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "xaf-grid",
+            "id": "main-list",
+            "columns": [
+              "Subject",
+              "Description"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SimpleObject_DetailView$View",
+        "type": "detailView",
+        "title": "$local.currentObject.Subject",
+        "components": [
+          {
+            "type": "xaf-toolbar",
+            "selectionIndependent": [
+              {
+                "type": "command",
+                "parameterType": "button",
+                "text": "Edit",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "SwitchToEditMode"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "id": "mainForm",
+            "items": [
+              {
+                "title": "Subject",
+                "type": "label",
+                "text": "$local.currentObject.Subject"
+              },
+              {
+                "title": "Description",
+                "type": "label",
+                "text": "$local.currentObject.Description"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SimpleObject_DetailView$Edit",
+        "type": "detailView",
+        "title": "$local.currentObject.Subject",
+        "components": [
+		  {
+            "id": "viewToolbar",
+            "type": "xaf-toolbar",
+            "selectionIndependent": [
+              {
+                "parameterType": "button",
+                "text": "Refresh",
+                "location": "before",
+                "onExecute": {
+                  "$action": {
+                    "actionId": "Refresh"
+                  }
+                }
+              },
+              {
+                "type": "command",
+                "parameterType": "xaf-singleChoiceAction",
+                "items": [
+                  {
+                    "text": "Save",
+                    "onExecute": {
+                      "$action": {
+                        "actionId": "Save"
+                      }
+                    }
+                  },
+                  {
+                    "text": "Save&Close",
+                    "onExecute": {
+                      "$action": {
+                        "actionId": "SaveAndClose"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "form",
+            "id": "mainForm",
+            "items": [
+              {
+                "title": "Subject",
+                "type": "input",
+                "value": "$local.currentObject.Subject"
+              },
+              {
+                "title": "Description",
+                "type": "input",
+                "value": "$local.currentObject.Description"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
